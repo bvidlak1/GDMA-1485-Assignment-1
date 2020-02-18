@@ -1,5 +1,44 @@
 @charset "UTF-8";
 /* CSS Document */
+/*--------------------------------------------------------------
+>>> CSS STANDARDS
+----------------------------------------------------------------
+1. Place in appropriate section
+2. Add new sections to the Table of Contents as needed
+3. Order properties consistently inside each declaration i.e. alphabetically or by function 
+4. Declaration selectors should each occupy a new line
+5. Enter one new line between rules
+6. Enter more than one new line between categories 
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Settings: used with preprocessors and contain font, colors definitions, etc.
+2.0 - Tools: globally used mixins and functions. Use for preprocessor only.
+3.0 - Generic: reset and/or normalize styles, box-sizing definition, etc.
+4.0 - Elements: styling for bare/generic HTML elements 
+        - Forms
+        - Lists
+        - Media
+        - Tables
+        - Typography: Headings, Paragraphs, Blockquotes, Anchors
+5.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
+        - Framework
+6.0 - Components: specific designed components
+        - Buttons
+        - Header
+        - Navigation 
+7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+        - Alignment	    
+        - Color
+        - Size
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+3.0 - Generic
+-------------------------------------------------------------- */
 * {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -12,63 +51,53 @@
 	box-sizing: border-box;
 }
 
-.wrapper {
-	width: 1170px;
-	padding: 10px 0;
-}
-
-#shawty {
-	width: 930px;
-}
-
-.wrapper, #shawty {
-	margin: 0 auto;
-}
-
-#logo {
-width: 225px;
-}
-
+/*--------------------------------------------------------------
+4.0 - ELEMENTS 
+-------------------------------------------------------------- */
+/*--TYPOGRAPHY--*/
 .brandi, .col-1-3 {
 	width: 310px;
 }
 
 #border-top {
-	border-top: 5px solid #062033;
+	border-top: 5px solid;
 }
 
-text, .wrapper, h3 {
+text, .wrapper, h2 {
 	margin-top: 0;
 }
 
-h2 {
-	font-family: 'Indie Flower', cursive;
-	font-size: 45px;
-	margin-bottom: 0;
+h1 {
+	font-family: 'Pacifico', cursive;
 }
 
-h3, #creative {
-	color: #1ea78d;
+
+/* -- LISTS -- */ 
+
+ul {
+	padding: 0;
 }
 
-a {
-	text-decoration: none;
+/*--------------------------------------------------------------
+5.0 - OBJECTS 
+-------------------------------------------------------------- */
+
+/* -- FORMS -- */ 
+.wrapper {
+	width: 1170px;
+	padding: 10px 0;
 }
 
 .row {
     overflow: auto;
 }
 
-div > header .wrapper .row div, .col-1-3, #logo h1 {
-    float: left; 
+.wrapper, #shawty {
+	margin: 0 auto;
 }
 
-nav, .col-1-3:last-child, #logo>p {
-    float: right;
-}
-
-#logo>p {
-	margin: 30px 0 0 0;
+#shawty {
+	width: 930px;
 }
 
 section .wrapper, #shawty {
@@ -76,39 +105,82 @@ section .wrapper, #shawty {
 	padding: 80px 0 120px;
 }
 
-#btn-one {
-	-moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
-	border-radius: 20px 20px 20px 20px;
-	border: 0px solid #000000;
-	background-color: #8ad042;
-    color: #2b5402;
-	padding: 10px 15px 10px 15px;
+#logo {
+width: 240px;
 }
 
-.bg-drkgrn {
-	background-color: #10443f;
+#bg-grn p:last-child span {
+	display: inline-block;
+	width: 17px;
+	height: 2px;
+	margin: 0 15px 5px 15px;
+}
+/*-------------------------------------------------------------- 
+6.0 - Components: specific designed components
+-------------------------------------------------------------- */
+
+#bg-grn p:first-child {
+	font-size: 62px;
+	margin-top: 300px;
 }
 
-.bg-grn {
-	background-color: #104f41;
+#bg-grn p:nth-child(2) {
+	font-size: 48px;
 }
 
-#grn-haze {
-	background-color: #f4f7f9;
+#bg-grn p:last-child {
+	font-size: 18px;
+	margin-bottom: 180px;
 }
 
-.grn-lite {
-	background-color: #1ea78d;
-}
-
-.txt-white, a, .bg-drkgrn, .bg-grn, h1{
-	color: white;
-}
-
-ul {
+#bg-grn p {
 	padding: 0;
+	margin: 25px;
 }
+
+#home p {
+	font-size: 38px;
+}
+
+#bg-grn p:first-child, #bg-grn p:nth-child(2), #bg-grn p:last-child, #home p, h1 span {
+	font-weight: 100;
+}
+
+#bg-grn p:first-child span {
+	font-weight: 800;
+}
+
+h3 {
+	 font-size: 20px;
+}
+
+h3, #border-top {
+	color: #062033;
+}
+
+h3, .brandi p {
+	text-align: left;
+}
+
+h3+p{
+	color: #4d606e;
+	font-size: 13px;
+}
+
+
+div > header .wrapper .row div, .col-1-3, #logo {
+    float: left; 
+}
+
+h2, #bg-grn p:nth-child(2) span, nav a:hover, h2 {
+	color: #1ea78d;
+}
+
+#bg-grn, #works header, #features header, #works p {
+	text-align: center;
+}
+
+/* -- NAVIGATION -- */
 
 nav {
 	margin: 15px 0 0 0;
@@ -120,21 +192,54 @@ nav li {
 	margin-right: 20px;
 }
 
-nav a:hover {
-	color: #1ea78d;
-}
-
 nav ul:last-child {
 	margin-right: 0;
 }
 
-#find div div, #notified div div {
-    width: 550px;
+a {
+	text-decoration: none;
+	font-size: 13px;
 }
 
-#find p, #notified p {
-    margin-bottom: 40px;
+nav, .col-1-3:last-child, #logo>p {
+    float: right;
 }
+	
+a, #bg-drkgrn, #bg-grn, .brandi {
+	color: white;
+}
+
+/* -- HEADER -- */
+#logo>p {
+	margin: 30px 0 0 0;
+}
+
+/* --BODY-- */
+.grn-lite, #bg-grn p:last-child span {
+	background-color: #1ea78d;
+}
+
+h1 span {
+	font-size: 13px;
+	opacity: 30%;
+	margin: 0 0 0 20px;
+}
+
+h1 span span {
+	color: #32b0ee;
+	margin: 0 15px 0 0;
+}
+
+h2 {
+	font-size: 28px;
+	padding: 30px;
+	border-bottom: 1px solid #e6e8ea;
+	display: inline-block;
+}
+
+/*--------------------------------------------------------------
+7.0 - UTILITIES
+-------------------------------------------------------------- */
 
 .col-1-3:first-child {
 	margin: 0 120px 0 0;
@@ -144,64 +249,14 @@ nav ul:last-child {
 	padding: 0 20px 0 20px;
 }
 
-h4 {
-	color: #062033;
-	text-align: left;
+#bg-drkgrn {
+	background-color: #10443f;
 }
 
-h4+p, .brandi {
-	color: #4d606e;
-	text-align: left;
+#bg-grn {
+	background-color: #104f41;
 }
 
-.txt-center {
-	text-align: center;
-}
-
-#how  {
-	background-color: #ebf6fc;
-}
-
-#btn-two {
-	-moz-border-radius: 20px 20px 20px 20px;
-	-webkit-border-radius: 20px 20px 20px 20px;
-	border-radius: 20px 20px 20px 20px;
-	border: 0px solid #000000;
-	background-color: #3b5998;
-    color: #fff;
-	padding: 10px 15px 10px 15px;
-}
-
-#btn-lgt-blue {
-	-moz-border-radius: 20px 20px 20px 20px;
-	-webkit-border-radius: 20px 20px 20px 20px;
-	border-radius: 20px 20px 20px 20px;
-	border: 0px solid #000000;
-	background-color: #55acee;
-    color: #fff;
-	padding: 10px 15px 10px 15px;
-}
-
-#notified {
-	    background-color: #36515e;
-}
-
-#btn-one:hover {
-	background-color: #70b32c;
-    color: #2b5402;
-	padding: 10px 15px 10px 15px;
-}
-
-#btn-two:hover {
-	-moz-border-radius: 20px 20px 20px 20px;
-	-webkit-border-radius: 20px 20px 20px 20px;
-	border-radius: 20px 20px 20px 20px;
-	border: 0px solid #000000;
-	background-color: #283c67;
-    color: #fff;
-	padding: 10px 15px 10px 15px;
-}
-
-#btn-lgt-blue:hover {
-	background-color: #1684d8;
+#grn-haze {
+	background-color: #f4f7f9;
 }
